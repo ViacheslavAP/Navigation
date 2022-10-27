@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_rail"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="ru.perelyginva.navigation.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_catalog"
+            app:destination="@id/catalog"
+            app:enterAnim="@anim/push_up_in"
+            app:popEnterAnim="@anim/push_up_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalog"
+        android:name="ru.perelyginva.navigation.Catalog"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_catalog_to_accaunt"
+            app:destination="@id/accaunt" />
+    </fragment>
+    <fragment
+        android:id="@+id/accaunt"
+        android:name="ru.perelyginva.navigation.Account"
+        android:label="fragment_accaunt"
+        tools:layout="@layout/fragment_accaunt" >
+        <action
+            android:id="@+id/action_accaunt_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+</navigation>
